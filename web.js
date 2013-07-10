@@ -3,9 +3,9 @@ var express = require('express');
 var fs= require('fs');
 var app = express.createServer(express.logger());
 
-var buffer = fs.readFile('index.html', 'utf-8');
 
 app.get('/', function(request, response) {
+  var buffer = fs.readFile('index.html', 'utf8');
   response.send(buffer);
 });
 
